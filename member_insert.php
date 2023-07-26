@@ -8,3 +8,6 @@ $user_email = $_POST["email"];
 echo $user_id;
 echo $user_pass;
 echo $user_email;
+
+// 데이터베이스에 접속하는 코드
+// mysqli_connect("호스트명", "계정명", "비밀번호", "데이터베이스명");
