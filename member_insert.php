@@ -11,3 +11,21 @@ echo $user_email;
 
 // 데이터베이스에 접속하는 코드
 // mysqli_connect("호스트명", "계정명", "비밀번호", "데이터베이스명");
+
+$con = mysqli_connect("localhost", "project1_user", "12345", "project1");
+
+// sql 쿼리 전달
+$sql = "insert into members(id, pass, level, email) ";
+$sql .= "values('$user_id', '$user_pass', 9, '$user_email')";
+
+// mysqli_query()로 데이터베이스에 접속하여 sql 명령어 전달
+mysqli_query($con, $sql); //$sql 에 저장된 명령어 실행
+// 데이터베이스 접속 종료
+mysqli_close($con);
+
+// 데이터베이스 종료 후 index.php 열기
+echo "
+<script>
+location.href = 'index.php';
+</script>
+";
