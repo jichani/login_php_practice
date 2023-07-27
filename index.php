@@ -36,9 +36,10 @@ else $user_level = "";
       <?php
         // 로그인 상태라면 회원정보, 로그아웃 메뉴 출력
       } else {
-        $logged = $user_id . "(" . $user_level . ")";
+        $logged = $user_id . "[ level: " . $user_level . " ]";
       ?>
-        <li><?php $logged ?></li>
+        <!-- echo 단축 태그 -->
+        <li><?= $logged ?></li>
         <li>|</li>
         <li><a href="logout.php">로그아웃</a></li>
       <?php
