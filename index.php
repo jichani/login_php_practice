@@ -44,6 +44,14 @@ else $user_level = "";
       <?php
       }
       ?>
+      <?php
+      if ($user_level == 1) {
+      ?>
+        <li>|</li>
+        <li><a href="admin.php">관리자 모드</a></li>
+      <?php
+      }
+      ?>
     </ul>
   </div>
   <div id="menu_bar">
