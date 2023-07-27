@@ -24,17 +24,37 @@ $num_match = mysqli_num_rows($result);
 if (!$num_match) {
   echo ("
     <script>
-      window.alert('등록되지 않은 아이디입니다!')
+      window.alert('등록되지 않은 아이디입니다.')
       history.go(-1)
     </script>  
   ");
 } else {
-  echo ("
+  $row = mysqli_fetch_array($result);
+  // $db_pass 변수 선언해서 데이터베이스의 pass 컬럼의 값 대입
+  $db_pass = $row["pass"];
+
+  // 데이터베이스의 비밀번호와 사용자 입력 비밀번호가 같지 않다면 에러 창 출력
+  if ($user_pass != $db_pass) {
+    echo ("
     <script>
-      window.alert('등록된 아이디입니다!')
+      window.alert('비밀번호가 틀렸습니다.')
       history.go(-1)
     </script>  
   ");
+    // 데이터 베이스의 비밀번호와 사용자 입력 비밀번호가 같다면 세션 시작!
+  } else {
+    session_start();
+    $_SESSION["userid"] = $row["id"];
+    $_SESSION["userlevel"] = $row["level"];
+    $_SESSION["useremail"] = $row["email"];
+
+    // 로그인 후에는 index 페이지로 이동!
+    echo ("
+        <script>
+          location.href = 'index.php';
+        </script>
+        ");
+  }
 }
 
 // 데이터베이스 접속 종료
