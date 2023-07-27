@@ -9,7 +9,27 @@
 </head>
 
 <body>
-  <h1>헬로 월드</h1>
+  <form name="login_form" method="post" action="./login.php">
+    <h2>로그인</h2>
+    <div>
+      <ul>
+        <li>아이디</li>
+        <li><input type="text" name="id" /></li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>비밀번호</li>
+        <li><input type="password" name="pass1" /></li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><input type="submit" /></li>
+        <li><input type="reset" /></li>
+      </ul>
+    </div>
+  </form>
 </body>
 
 </html>

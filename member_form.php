@@ -10,7 +10,7 @@
 
 <body>
   <!-- method를 수정하면 get이나 post 방식으로 가져오는 것이 가능하다. -->
-  <form name="member_forem" method="post" action="./member_insert.php">
+  <form name="member_form" method="post" action="./member_insert.php">
     <h2>회원가입</h2>
     <div>
       <ul>
